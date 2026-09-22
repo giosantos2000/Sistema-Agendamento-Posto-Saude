@@ -1,0 +1,42 @@
+.cadastro-funcionario {
+  width: 400px;
+  max-width: 90%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.cadastro-funcionario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.cadastro-funcionario label {
+  text-align: left;
+  font-weight: bold;
+}
+
+.cadastro-funcionario input {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.cadastro-funcionario button {
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.cadastro-funcionario button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.erro-cadastro-funcionario {
+  font-weight: bold;
+}
+
+.sucesso-cadastro-funcionario {
+  font-weight: bold;
+}

@@ -1,0 +1,47 @@
+.cadastro {
+  width: 400px;
+
+  margin: 40px auto;
+
+  padding: 20px;
+
+  border: 1px solid #ccc;
+
+  border-radius: 10px;
+}
+
+.cadastro h1 {
+  text-align: center;
+
+  color: blue;
+}
+
+.cadastro form {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.cadastro label {
+  margin-top: 10px;
+}
+
+.cadastro input {
+  padding: 10px;
+
+  margin-top: 5px;
+}
+
+.cadastro button {
+  margin-top: 20px;
+
+  padding: 10px;
+
+  cursor: pointer;
+}
+
+.cadastro p {
+  text-align: center;
+
+  margin-top: 20px;
+}

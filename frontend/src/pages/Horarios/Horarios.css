@@ -1,0 +1,50 @@
+.horarios {
+  width: 700px;
+  max-width: 90%;
+  margin: 40px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.horarios form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.horarios input,
+.horarios select {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.horarios button {
+  padding: 12px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.horarios table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.horarios th,
+.horarios td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.horarios th {
+  font-weight: bold;
+}
+
+.horarios .erro {
+  color: red;
+}
+
+.horarios .mensagem {
+  color: green;
+}

@@ -1,0 +1,42 @@
+.agendamento {
+  width: 450px;
+
+  margin: 40px auto;
+
+  border: 1px solid #ccc;
+
+  border-radius: 10px;
+
+  padding: 20px;
+}
+
+.agendamento h1 {
+  text-align: center;
+
+  color: blue;
+}
+
+.agendamento form {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.agendamento label {
+  margin-top: 15px;
+}
+
+.agendamento select,
+.agendamento input {
+  padding: 10px;
+
+  margin-top: 5px;
+}
+
+.agendamento button {
+  margin-top: 25px;
+
+  padding: 12px;
+
+  cursor: pointer;
+}

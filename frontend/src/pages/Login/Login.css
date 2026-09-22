@@ -1,0 +1,43 @@
+.login {
+  width: 350px;
+
+  margin: 80px auto;
+
+  text-align: center;
+
+  border: 1px solid #ccc;
+
+  border-radius: 10px;
+
+  padding: 20px;
+}
+
+.login h1 {
+  color: blue;
+}
+
+.login form {
+  display: flex;
+
+  flex-direction: column;
+}
+
+.login label {
+  text-align: left;
+
+  margin-top: 10px;
+}
+
+.login input {
+  padding: 10px;
+
+  margin-top: 5px;
+}
+
+.login button {
+  margin-top: 15px;
+
+  padding: 10px;
+
+  cursor: pointer;
+}

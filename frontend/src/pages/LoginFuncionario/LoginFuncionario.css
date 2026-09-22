@@ -1,0 +1,26 @@
+.login-funcionario {
+  width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  text-align: center;
+}
+
+.login-funcionario form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-funcionario input {
+  padding: 10px;
+}
+
+.login-funcionario button {
+  padding: 10px;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.login-funcionario p {
+  color: red;
+}

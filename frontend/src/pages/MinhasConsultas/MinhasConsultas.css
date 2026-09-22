@@ -1,0 +1,13 @@
+.minhas-consultas {
+  padding: 30px;
+}
+
+.minhas-consultas h1 {
+  margin-bottom: 20px;
+}
+
+.minhas-consultas button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
