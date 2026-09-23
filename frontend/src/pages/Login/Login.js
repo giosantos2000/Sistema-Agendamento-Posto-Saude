@@ -12,7 +12,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      const resposta = await fetch("http://localhost:5000/auth/login", {
+      const resposta = await fetch("http://192.168.88.4:5000/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -33,7 +33,7 @@ function Cadastro() {
     }
 
     try {
-      const resposta = await fetch("http://localhost:5000/pacientes", {
+      const resposta = await fetch("http://192.168.88.4:5000/pacientes", {
         method: "POST",
 
         headers: {

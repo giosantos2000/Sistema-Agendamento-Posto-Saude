@@ -17,16 +17,19 @@ function LoginFuncionario() {
     setCarregando(true);
 
     try {
-      const resposta = await fetch("http://localhost:5000/funcionarios/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const resposta = await fetch(
+        "http://192.168.88.4:5000/funcionarios/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            senha,
+          }),
         },
-        body: JSON.stringify({
-          email,
-          senha,
-        }),
-      });
+      );
 
       const dados = await resposta.json();
 

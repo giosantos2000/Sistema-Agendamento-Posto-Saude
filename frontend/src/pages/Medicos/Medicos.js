@@ -22,7 +22,7 @@ function Medicos() {
         return;
       }
 
-      const resposta = await fetch("http://localhost:5000/medicos", {
+      const resposta = await fetch("http://192.168.88.4:5000/medicos", {
         method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
@@ -68,7 +68,7 @@ function Medicos() {
         return;
       }
 
-      const resposta = await fetch("http://localhost:5000/medicos", {
+      const resposta = await fetch("http://192.168.88.4:5000/medicos", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

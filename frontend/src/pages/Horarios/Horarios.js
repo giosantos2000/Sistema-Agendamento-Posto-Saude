@@ -26,7 +26,7 @@ function Horarios() {
         return;
       }
 
-      const resposta = await fetch("http://localhost:5000/medicos", {
+      const resposta = await fetch("http://192.168.88.4:5000/medicos", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -60,7 +60,7 @@ function Horarios() {
 
     try {
       const resposta = await fetch(
-        `http://localhost:5000/horarios/medico/${idMedico}`,
+        `http://192.168.88.4:5000/horarios/medico/${idMedico}`,
       );
 
       if (!resposta.ok) {
@@ -106,7 +106,7 @@ function Horarios() {
         return;
       }
 
-      const resposta = await fetch("http://localhost:5000/horarios", {
+      const resposta = await fetch("http://192.168.88.4:5000/horarios", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

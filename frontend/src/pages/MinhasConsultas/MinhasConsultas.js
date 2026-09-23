@@ -30,13 +30,13 @@ function MinhasConsultas() {
       }
 
       const resposta = await fetch(
-        `http://localhost:5000/consultas/paciente/${paciente.id}`,
+        `http://192.168.88.4:5000/consultas/paciente/${paciente.id}`,
         {
           method: "GET",
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       const dados = await resposta.json();
@@ -68,7 +68,7 @@ function MinhasConsultas() {
 
   const cancelarConsulta = async (idConsulta) => {
     const confirmar = window.confirm(
-      "Tem certeza que deseja cancelar esta consulta?"
+      "Tem certeza que deseja cancelar esta consulta?",
     );
 
     if (!confirmar) {
@@ -84,13 +84,13 @@ function MinhasConsultas() {
       }
 
       const resposta = await fetch(
-        `http://localhost:5000/consultas/${idConsulta}/cancelar`,
+        `http://192.168.88.4:5000/consultas/${idConsulta}/cancelar`,
         {
           method: "PUT",
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
 
       const dados = await resposta.json();
@@ -103,9 +103,7 @@ function MinhasConsultas() {
       }
 
       if (!resposta.ok) {
-        throw new Error(
-          dados.mensagem || "Erro ao cancelar consulta."
-        );
+        throw new Error(dados.mensagem || "Erro ao cancelar consulta.");
       }
 
       alert("Consulta cancelada com sucesso!");

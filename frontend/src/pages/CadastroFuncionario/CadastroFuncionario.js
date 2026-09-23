@@ -33,7 +33,7 @@ function CadastroFuncionario() {
     try {
       setCarregando(true);
 
-      const resposta = await fetch("http://localhost:5000/funcionarios", {
+      const resposta = await fetch("http://192.168.88.4:5000/funcionarios", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

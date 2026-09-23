@@ -32,7 +32,7 @@ function Agenda() {
       setMensagem("");
 
       const resposta = await fetch(
-        `http://localhost:5000/consultas/agenda?data=${dataSelecionada}`,
+        `http://192.168.88.4:5000/consultas/agenda?data=${dataSelecionada}`,
         {
           method: "GET",
           headers: {
@@ -96,7 +96,7 @@ function Agenda() {
       setMensagem("");
 
       const resposta = await fetch(
-        `http://localhost:5000/consultas/${idConsulta}/cancelar-funcionario`,
+        `http://192.168.88.4:5000/consultas/${idConsulta}/cancelar-funcionario`,
         {
           method: "PUT",
           headers: {
