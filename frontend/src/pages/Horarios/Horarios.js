@@ -26,11 +26,14 @@ function Horarios() {
         return;
       }
 
-      const resposta = await fetch("http://192.168.88.4:5000/medicos", {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       const dados = await resposta.json();
 
@@ -60,7 +63,7 @@ function Horarios() {
 
     try {
       const resposta = await fetch(
-        `http://192.168.88.4:5000/horarios/medico/${idMedico}`,
+        `http://sistema-agendamento-posto-saude-production.up.railway.app/horarios/medico/${idMedico}`,
       );
 
       if (!resposta.ok) {
@@ -106,19 +109,22 @@ function Horarios() {
         return;
       }
 
-      const resposta = await fetch("http://192.168.88.4:5000/horarios", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/horarios",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            id_medico: medicoSelecionado,
+            dia_semana: diaSemana,
+            hora_inicio: horaInicio,
+            hora_fim: horaFim,
+          }),
         },
-        body: JSON.stringify({
-          id_medico: medicoSelecionado,
-          dia_semana: diaSemana,
-          hora_inicio: horaInicio,
-          hora_fim: horaFim,
-        }),
-      });
+      );
 
       const dados = await resposta.json();
 

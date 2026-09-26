@@ -33,23 +33,26 @@ function Cadastro() {
     }
 
     try {
-      const resposta = await fetch("http://192.168.88.4:5000/pacientes", {
-        method: "POST",
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/pacientes",
+        {
+          method: "POST",
 
-        headers: {
-          "Content-Type": "application/json",
+          headers: {
+            "Content-Type": "application/json",
+          },
+
+          body: JSON.stringify({
+            nome: formulario.nome,
+            cpf: formulario.cpf,
+            dataNascimento: formulario.dataNascimento,
+            telefone: formulario.telefone,
+            endereco: formulario.endereco,
+            email: formulario.email,
+            senha: formulario.senha,
+          }),
         },
-
-        body: JSON.stringify({
-          nome: formulario.nome,
-          cpf: formulario.cpf,
-          dataNascimento: formulario.dataNascimento,
-          telefone: formulario.telefone,
-          endereco: formulario.endereco,
-          email: formulario.email,
-          senha: formulario.senha,
-        }),
-      });
+      );
 
       const dados = await resposta.json();
 

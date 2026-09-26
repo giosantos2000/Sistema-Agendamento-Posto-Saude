@@ -12,16 +12,19 @@ function Login() {
     e.preventDefault();
 
     try {
-      const resposta = await fetch("http://192.168.88.4:5000/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email,
+            senha,
+          }),
         },
-        body: JSON.stringify({
-          email,
-          senha,
-        }),
-      });
+      );
 
       const dados = await resposta.json();
 

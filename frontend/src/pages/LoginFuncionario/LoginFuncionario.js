@@ -18,7 +18,7 @@ function LoginFuncionario() {
 
     try {
       const resposta = await fetch(
-        "http://192.168.88.4:5000/funcionarios/login",
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/funcionarios/login",
         {
           method: "POST",
           headers: {

@@ -22,12 +22,15 @@ function Medicos() {
         return;
       }
 
-      const resposta = await fetch("http://192.168.88.4:5000/medicos", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         },
-      });
+      );
 
       const dados = await resposta.json();
 
@@ -68,18 +71,21 @@ function Medicos() {
         return;
       }
 
-      const resposta = await fetch("http://192.168.88.4:5000/medicos", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            nome,
+            crm,
+            telefone,
+          }),
         },
-        body: JSON.stringify({
-          nome,
-          crm,
-          telefone,
-        }),
-      });
+      );
 
       const dados = await resposta.json();
 

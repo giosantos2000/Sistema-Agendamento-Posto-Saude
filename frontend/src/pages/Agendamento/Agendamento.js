@@ -18,7 +18,9 @@ function Agendamento() {
   useEffect(() => {
     const buscarMedicos = async () => {
       try {
-        const resposta = await fetch("http://192.168.88.4:5000/medicos");
+        const resposta = await fetch(
+          "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+        );
 
         if (!resposta.ok) {
           throw new Error("Erro ao buscar médicos.");
@@ -51,7 +53,7 @@ function Agendamento() {
         setErro("");
 
         const resposta = await fetch(
-          `http://192.168.88.4:5000/horarios/disponiveis/medico/${medicoSelecionado}?data=${dataConsulta}`,
+          `http://sistema-agendamento-posto-saude-production.up.railway.app/horarios/disponiveis/medico/${medicoSelecionado}?data=${dataConsulta}`,
         );
 
         if (!resposta.ok) {
@@ -132,18 +134,21 @@ function Agendamento() {
     }
 
     try {
-      const resposta = await fetch("http://192.168.88.4:5000/consultas", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/consultas",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            id_paciente: paciente.id,
+            id_medico: Number(medicoSelecionado),
+            id_horario: Number(horarioSelecionado),
+            data_consulta: dataConsulta,
+          }),
         },
-        body: JSON.stringify({
-          id_paciente: paciente.id,
-          id_medico: Number(medicoSelecionado),
-          id_horario: Number(horarioSelecionado),
-          data_consulta: dataConsulta,
-        }),
-      });
+      );
 
       const dados = await resposta.json();
 

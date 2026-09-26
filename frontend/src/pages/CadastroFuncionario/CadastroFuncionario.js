@@ -33,17 +33,20 @@ function CadastroFuncionario() {
     try {
       setCarregando(true);
 
-      const resposta = await fetch("http://192.168.88.4:5000/funcionarios", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const resposta = await fetch(
+        "http://sistema-agendamento-posto-saude-production.up.railway.app/funcionarios",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            nome,
+            email,
+            senha,
+          }),
         },
-        body: JSON.stringify({
-          nome,
-          email,
-          senha,
-        }),
-      });
+      );
 
       const dados = await resposta.json();
 
