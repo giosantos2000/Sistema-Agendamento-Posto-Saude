@@ -13,7 +13,7 @@ function Login() {
 
     try {
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/auth/login",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/auth/login",
         {
           method: "POST",
           headers: {
@@ -28,16 +28,13 @@ function Login() {
 
       const dados = await resposta.json();
 
-      // Verifica se o login foi realizado com sucesso
       if (!resposta.ok) {
         alert(dados.mensagem || "Email ou senha inválidos.");
         return;
       }
 
-      // Salva o token
       localStorage.setItem("token", dados.token);
 
-      // Salva os dados do paciente
       localStorage.setItem("paciente", JSON.stringify(dados.paciente));
 
       console.log("Login realizado:", dados);
