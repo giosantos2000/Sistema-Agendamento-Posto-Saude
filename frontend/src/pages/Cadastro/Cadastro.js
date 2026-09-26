@@ -26,7 +26,6 @@ function Cadastro() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    // Verifica se as senhas são iguais
     if (formulario.senha !== formulario.confirmarSenha) {
       alert("As senhas não são iguais.");
       return;
@@ -34,14 +33,12 @@ function Cadastro() {
 
     try {
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/pacientes",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/pacientes",
         {
           method: "POST",
-
           headers: {
             "Content-Type": "application/json",
           },
-
           body: JSON.stringify({
             nome: formulario.nome,
             cpf: formulario.cpf,
@@ -59,7 +56,6 @@ function Cadastro() {
       if (resposta.ok) {
         alert("Paciente cadastrado com sucesso!");
 
-        // Limpa o formulário
         setFormulario({
           nome: "",
           cpf: "",
@@ -87,7 +83,6 @@ function Cadastro() {
       <h1>Cadastro</h1>
 
       <form onSubmit={handleSubmit}>
-        {/* Nome */}
         <label htmlFor="nome">Nome Completo</label>
 
         <input
@@ -100,7 +95,6 @@ function Cadastro() {
           required
         />
 
-        {/* CPF */}
         <label htmlFor="cpf">CPF</label>
 
         <input
@@ -113,7 +107,6 @@ function Cadastro() {
           required
         />
 
-        {/* Data de nascimento */}
         <label htmlFor="dataNascimento">Data de Nascimento</label>
 
         <input
@@ -125,7 +118,6 @@ function Cadastro() {
           required
         />
 
-        {/* Telefone */}
         <label htmlFor="telefone">Telefone</label>
 
         <input
@@ -138,7 +130,6 @@ function Cadastro() {
           required
         />
 
-        {/* Endereço */}
         <label htmlFor="endereco">Endereço</label>
 
         <input
@@ -151,7 +142,6 @@ function Cadastro() {
           required
         />
 
-        {/* E-mail */}
         <label htmlFor="email">E-mail</label>
 
         <input
@@ -164,7 +154,6 @@ function Cadastro() {
           required
         />
 
-        {/* Senha */}
         <label htmlFor="senha">Senha</label>
 
         <input
@@ -177,7 +166,6 @@ function Cadastro() {
           required
         />
 
-        {/* Confirmar senha */}
         <label htmlFor="confirmarSenha">Confirmar Senha</label>
 
         <input
@@ -190,11 +178,9 @@ function Cadastro() {
           required
         />
 
-        {/* Botão de cadastro */}
         <button type="submit">Cadastrar</button>
       </form>
 
-      {/* Link para login */}
       <p>Já possui uma conta?</p>
 
       <Link to="/login">
