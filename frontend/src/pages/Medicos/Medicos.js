@@ -1,5 +1,5 @@
 import "./Medicos.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Medicos() {
@@ -13,7 +13,7 @@ function Medicos() {
   const [mensagem, setMensagem] = useState("");
   const [carregando, setCarregando] = useState(false);
 
-  const buscarMedicos = async () => {
+  const buscarMedicos = useCallback(async () => {
     try {
       const token = localStorage.getItem("tokenFuncionario");
 
@@ -50,11 +50,11 @@ function Medicos() {
       console.error("Erro ao buscar médicos:", error);
       setErro(error.message || "Não foi possível carregar os médicos.");
     }
-  };
+  }, [navigate]);
 
   useEffect(() => {
     buscarMedicos();
-  }, []);
+  }, [buscarMedicos]);
 
   const handleCadastrar = async (e) => {
     e.preventDefault();

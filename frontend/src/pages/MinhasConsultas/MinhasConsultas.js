@@ -1,6 +1,6 @@
 import "./MinhasConsultas.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 function MinhasConsultas() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function MinhasConsultas() {
     return hora.substring(0, 5);
   };
 
-  const buscarConsultas = async () => {
+  const buscarConsultas = useCallback(async () => {
     try {
       const paciente = JSON.parse(localStorage.getItem("paciente"));
       const token = localStorage.getItem("token");
@@ -60,11 +60,11 @@ function MinhasConsultas() {
     } finally {
       setCarregando(false);
     }
-  };
+  }, [navigate]);
 
   useEffect(() => {
     buscarConsultas();
-  }, []);
+  }, [buscarConsultas]);
 
   const cancelarConsulta = async (idConsulta) => {
     const confirmar = window.confirm(

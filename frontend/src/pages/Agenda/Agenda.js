@@ -1,5 +1,5 @@
 import "./Agenda.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Agenda() {
@@ -14,7 +14,7 @@ function Agenda() {
   const [erro, setErro] = useState("");
   const [mensagem, setMensagem] = useState("");
 
-  const buscarAgenda = async () => {
+  const buscarAgenda = useCallback(async () => {
     const token = localStorage.getItem("tokenFuncionario");
 
     if (!token) {
@@ -68,11 +68,11 @@ function Agenda() {
     } finally {
       setCarregando(false);
     }
-  };
+  }, [dataSelecionada, navigate]);
 
   useEffect(() => {
     buscarAgenda();
-  }, [dataSelecionada]);
+  }, [buscarAgenda]);
 
   const cancelarConsulta = async (idConsulta) => {
     const confirmou = window.confirm(

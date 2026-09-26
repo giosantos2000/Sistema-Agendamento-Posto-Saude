@@ -1,5 +1,5 @@
 import "./Horarios.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Horarios() {
@@ -17,7 +17,7 @@ function Horarios() {
   const [mensagem, setMensagem] = useState("");
   const [carregando, setCarregando] = useState(false);
 
-  const buscarMedicos = async () => {
+  const buscarMedicos = useCallback(async () => {
     try {
       const token = localStorage.getItem("tokenFuncionario");
 
@@ -53,9 +53,9 @@ function Horarios() {
       console.error("Erro ao buscar médicos:", error);
       setErro("Não foi possível carregar os médicos.");
     }
-  };
+  }, [navigate]);
 
-  const buscarHorarios = async (idMedico) => {
+  const buscarHorarios = useCallback(async (idMedico) => {
     if (!idMedico) {
       setHorarios([]);
       return;
@@ -77,7 +77,7 @@ function Horarios() {
       console.error("Erro ao buscar horários:", error);
       setErro("Não foi possível carregar os horários.");
     }
-  };
+  }, []);
 
   useEffect(() => {
     const token = localStorage.getItem("tokenFuncionario");
@@ -88,11 +88,11 @@ function Horarios() {
     }
 
     buscarMedicos();
-  }, []);
+  }, [buscarMedicos, navigate]);
 
   useEffect(() => {
     buscarHorarios(medicoSelecionado);
-  }, [medicoSelecionado]);
+  }, [buscarHorarios, medicoSelecionado]);
 
   const handleCadastrar = async (e) => {
     e.preventDefault();
