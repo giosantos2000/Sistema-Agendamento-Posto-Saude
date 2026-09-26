@@ -30,7 +30,7 @@ function MinhasConsultas() {
       }
 
       const resposta = await fetch(
-        `http://sistema-agendamento-posto-saude-production.up.railway.app/consultas/paciente/${paciente.id}`,
+        `https://sistema-agendamento-posto-saude-production.up.railway.app/consultas/paciente/${paciente.id}`,
         {
           method: "GET",
           headers: {
@@ -84,7 +84,7 @@ function MinhasConsultas() {
       }
 
       const resposta = await fetch(
-        `http://sistema-agendamento-posto-saude-production.up.railway.app/consultas/${idConsulta}/cancelar`,
+        `https://sistema-agendamento-posto-saude-production.up.railway.app/consultas/${idConsulta}/cancelar`,
         {
           method: "PUT",
           headers: {
