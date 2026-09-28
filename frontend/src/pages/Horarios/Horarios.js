@@ -27,7 +27,7 @@ function Horarios() {
       }
 
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -63,7 +63,7 @@ function Horarios() {
 
     try {
       const resposta = await fetch(
-        `http://sistema-agendamento-posto-saude-production.up.railway.app/horarios/medico/${idMedico}`,
+        `https://sistema-agendamento-posto-saude-production.up.railway.app/horarios/medico/${idMedico}`,
       );
 
       if (!resposta.ok) {
@@ -110,7 +110,7 @@ function Horarios() {
       }
 
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/horarios",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/horarios",
         {
           method: "POST",
           headers: {
