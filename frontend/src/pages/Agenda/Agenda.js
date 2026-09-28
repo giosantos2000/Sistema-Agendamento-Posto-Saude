@@ -32,7 +32,7 @@ function Agenda() {
       setMensagem("");
 
       const resposta = await fetch(
-        `http://sistema-agendamento-posto-saude-production.up.railway.app/consultas/agenda?data=${dataSelecionada}`,
+        `https://sistema-agendamento-posto-saude-production.up.railway.app/consultas/agenda?data=${dataSelecionada}`,
         {
           method: "GET",
           headers: {
@@ -96,7 +96,7 @@ function Agenda() {
       setMensagem("");
 
       const resposta = await fetch(
-        `http://sistema-agendamento-posto-saude-production.up.railway.app/consultas/${idConsulta}/cancelar-funcionario`,
+        `https://sistema-agendamento-posto-saude-production.up.railway.app/consultas/${idConsulta}/cancelar-funcionario`,
         {
           method: "PUT",
           headers: {
