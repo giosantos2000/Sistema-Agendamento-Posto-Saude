@@ -41,7 +41,15 @@ function Agenda() {
         },
       );
 
-      const dados = await resposta.json();
+      const texto = await resposta.text();
+
+      let dados;
+
+      try {
+        dados = JSON.parse(texto);
+      } catch {
+        dados = { mensagem: texto };
+      }
 
       if (resposta.status === 401) {
         localStorage.removeItem("tokenFuncionario");
@@ -63,8 +71,16 @@ function Agenda() {
       setConsultas(dados);
     } catch (error) {
       console.error("Erro ao buscar agenda:", error);
+
+      if (error.message === "Failed to fetch") {
+        setErro(
+          "Não foi possível conectar ao servidor. Verifique a conexão com o backend.",
+        );
+      } else {
+        setErro(error.message);
+      }
+
       setConsultas([]);
-      setErro(error.message);
     } finally {
       setCarregando(false);
     }
@@ -105,7 +121,15 @@ function Agenda() {
         },
       );
 
-      const dados = await resposta.json();
+      const texto = await resposta.text();
+
+      let dados;
+
+      try {
+        dados = JSON.parse(texto);
+      } catch {
+        dados = { mensagem: texto };
+      }
 
       if (resposta.status === 401) {
         localStorage.removeItem("tokenFuncionario");
@@ -123,7 +147,14 @@ function Agenda() {
       await buscarAgenda();
     } catch (error) {
       console.error("Erro ao cancelar consulta:", error);
-      setErro(error.message);
+
+      if (error.message === "Failed to fetch") {
+        setErro(
+          "Não foi possível conectar ao servidor. Verifique a conexão com o backend.",
+        );
+      } else {
+        setErro(error.message);
+      }
     } finally {
       setCancelando(false);
     }
