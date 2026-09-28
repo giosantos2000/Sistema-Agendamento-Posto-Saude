@@ -18,7 +18,7 @@ function LoginFuncionario() {
 
     try {
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/funcionarios/login",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/funcionarios/login",
         {
           method: "POST",
           headers: {
