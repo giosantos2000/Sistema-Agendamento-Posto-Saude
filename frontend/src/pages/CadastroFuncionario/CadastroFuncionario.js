@@ -34,7 +34,7 @@ function CadastroFuncionario() {
       setCarregando(true);
 
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/funcionarios",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/funcionarios",
         {
           method: "POST",
           headers: {
