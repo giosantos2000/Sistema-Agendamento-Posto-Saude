@@ -23,7 +23,7 @@ function Medicos() {
       }
 
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
         {
           method: "GET",
           headers: {
@@ -72,7 +72,7 @@ function Medicos() {
       }
 
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
         {
           method: "POST",
           headers: {
