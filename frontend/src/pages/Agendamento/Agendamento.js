@@ -19,7 +19,7 @@ function Agendamento() {
     const buscarMedicos = async () => {
       try {
         const resposta = await fetch(
-          "http://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
+          "https://sistema-agendamento-posto-saude-production.up.railway.app/medicos",
         );
 
         if (!resposta.ok) {
@@ -53,7 +53,7 @@ function Agendamento() {
         setErro("");
 
         const resposta = await fetch(
-          `http://sistema-agendamento-posto-saude-production.up.railway.app/horarios/disponiveis/medico/${medicoSelecionado}?data=${dataConsulta}`,
+          `https://sistema-agendamento-posto-saude-production.up.railway.app/horarios/disponiveis/medico/${medicoSelecionado}?data=${dataConsulta}`,
         );
 
         if (!resposta.ok) {
@@ -135,7 +135,7 @@ function Agendamento() {
 
     try {
       const resposta = await fetch(
-        "http://sistema-agendamento-posto-saude-production.up.railway.app/consultas",
+        "https://sistema-agendamento-posto-saude-production.up.railway.app/consultas",
         {
           method: "POST",
           headers: {
