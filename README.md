@@ -11,17 +11,21 @@ O sistema tem como objetivo facilitar o agendamento e o gerenciamento de consult
 
 ## Demonstração do Sistema
 
+
+## Demonstração do Sistema
+
 ### Login do paciente
-![Login do paciente](screenshots/login-paciente.png)
+![Login do paciente](screenshots/login-paciente.png.png)
 
 ### Agendamento de consultas
-![Agendamento de consultas](screenshots/agendamento.png)
+![Agendamento de consultas](screenshots/agendamento.png.png)
 
-### Painel do funcionário
-![Cadastro do funcionário](screenshots/cadastro-funcionarios.png)
+### Cadastro de funcionários
+![Cadastro de funcionários](screenshots/cadastro-funcionarios.png.png)
 
 ### Agenda de consultas
-![Agenda de consultas](screenshots/agenda-consultas.png)
+![Agenda de consultas](screenshots/%20-%20agenda-consultas.png.png)
+
 
 
 
