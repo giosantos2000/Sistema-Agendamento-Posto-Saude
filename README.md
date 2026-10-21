@@ -24,7 +24,7 @@ O sistema tem como objetivo facilitar o agendamento e o gerenciamento de consult
 ![Cadastro de funcionários](screenshots/cadastro-funcionarios.png.png)
 
 ### Agenda de consultas
-![Agenda de consultas](screenshots/%20-%20agenda-consultas.png.png)
+![Agenda de consultas](screenshots/-agenda-consultas.png.png)
 
 
 
